@@ -1,0 +1,143 @@
+/* General body styling for dark theme */
+body {
+    font-family: 'Roboto', sans-serif; /* Modern font for a techy feel */
+    background-color: #0e0e0e; /* Darker background for a more sophisticated look */
+    color: #e1e1e1; /* Light text color for contrast */
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden; /* Prevent horizontal scroll */
+}
+
+h1{
+    text-align: center;
+    margin-top: 30px;
+    font-size: 3rem;
+    text-decoration: underline;
+}
+
+/* Header styling */
+header {
+    background-color: #181818; /* Dark background for the header */
+    color: #00bcd4; /* Cyan color for a futuristic touch */
+    text-align: center;
+    padding: 40px 0;
+    font-size: 2.5rem;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    border-bottom: 2px solid #00bcd4; /* Border to separate header */
+}
+
+/* Title hover animation */
+header h1 {
+    margin: 0;
+    transition: transform 0.3s ease-in-out;
+}
+
+header h1:hover {
+    transform: scale(1.1); /* Slightly enlarges the header title on hover */
+}
+
+/* Container for the articles */
+#news-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 20px;
+    padding: 30px;
+    transition: all 0.3s ease;
+}
+
+/* Styling each article */
+.article {
+    background-color: #212121; /* Dark background for articles */
+    border-radius: 12px;
+    padding: 20px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.6); /* Strong shadow for tech look */
+    transition: all 0.3s ease;
+    overflow: hidden;
+}
+
+.article:hover {
+    transform: translateY(-10px); /* Slight lift on hover */
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.8); /* Stronger shadow on hover */
+}
+
+.article h2 {
+    font-size: 1.5rem;
+    color: #ffffff; /* White text for the title */
+    margin-bottom: 15px;
+    letter-spacing: 1px;
+    text-transform: capitalize;
+}
+
+.article p {
+    font-size: 1rem;
+    line-height: 1.6;
+    color: #b0b0b0; /* Light grey text for descriptions */
+    margin-bottom: 10px;
+}
+
+.article a {
+    font-weight: bold;
+    color: #00bcd4; /* Cyan link color for futuristic effect */
+    text-decoration: none;
+    border: 2px solid #00bcd4; /* Border around the link */
+    padding: 8px 20px;
+    border-radius: 25px;
+    transition: all 0.3s ease;
+}
+
+.article a:hover {
+    background-color: #00bcd4;
+    color: #0e0e0e; /* Inverted color scheme on hover */
+    transform: translateY(-5px); /* Slight lift on hover */
+}
+
+/* Techy animated background */
+#news-container::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(45deg, #0e0e0e, #181818, #0e0e0e);
+    background-size: 400% 400%;
+    animation: gradientMove 6s ease infinite;
+    z-index: -1;
+}
+
+@keyframes gradientMove {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+/* Mobile responsiveness */
+@media (max-width: 768px) {
+    #news-container {
+        grid-template-columns: 1fr;
+    }
+
+    .article {
+        margin: 0 auto;
+    }
+}
+
+/* Footer */
+footer {
+    background-color: #181818;
+    color: #00bcd4;
+    text-align: center;
+    padding: 20px;
+    font-size: 1rem;
+    border-top: 2px solid #00bcd4;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+}
